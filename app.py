@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -38,4 +38,10 @@ def delete_data(key: str):
         return {"message": f"the parameter {key} was not found"}
 
 
-app.run(host="0.0.0.0", port=5000, debug=True)
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify(error=str(e)), 404
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=3000, debug=True)
