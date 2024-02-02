@@ -19,7 +19,8 @@ This will start the web server on port 5000. You can access the home page
 2. Navigate to the project directory
 3. Run the following commands:
 
-`docker build -t <name:version> .` e.g. `docker build webapp:1.0 .`
+`docker build -t <name:version> .` e.g. `docker build -t webapp:1.0 .`
+Note the dot at the end of the command
    
 `docker run -d -p <chosen_machine's_port:app's_port> <name:version> ` e.g. `docker run -d -p 5000:5000 webapp:1.0`
 
